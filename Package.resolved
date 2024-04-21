@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-sysctl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/p-x9/swift-sysctl.git",
+      "state" : {
+        "revision" : "df7d625d853ade0b259ee48810cd7441b3527738",
+        "version" : "0.1.0"
+      }
+    }
+  ],
+  "version" : 2
+}
