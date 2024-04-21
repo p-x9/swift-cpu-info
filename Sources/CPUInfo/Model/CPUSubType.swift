@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftSysctl
 
 public enum CPUSubType {
     case any(CPUAnySubType)
@@ -1062,14 +1063,11 @@ extension CPUARM64_32SubType: CustomStringConvertible {
 extension CPUSubType {
     /// CPU subtype of host pc
     static var current: CPUSubType? {
-        guard let cpuType: CPUType = .current else {
+        guard let cpuType: CPUType = .current,
+              let rawValue = Sysctl.sysctl(hw.cpusubtype) else {
             return nil
         }
-        var subtype: cpu_type_t = 0
-        var size = MemoryLayout<cpu_type_t>.size
-        let ret = sysctlbyname("hw.cpusubtype", &subtype, &size, nil, 0)
-        guard ret != -1 else { return  nil }
-        return .init(rawValue: subtype, of: cpuType)
+        return .init(rawValue: rawValue, of: cpuType)
     }
 }
 
