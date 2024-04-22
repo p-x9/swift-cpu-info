@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftSysctl
+import CPUInfoC
 
 public enum CPUFamily {
     /// CPUFAMILY_UNKNOWN

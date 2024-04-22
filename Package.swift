@@ -17,9 +17,11 @@ let package = Package(
         .target(
             name: "CPUInfo",
             dependencies: [
+                "CPUInfoC",
                 .product(name: "SwiftSysctl", package: "swift-sysctl")
             ]
         ),
+        .target(name: "CPUInfoC"),
         .testTarget(
             name: "CPUInfoTests",
             dependencies: ["CPUInfo"]
