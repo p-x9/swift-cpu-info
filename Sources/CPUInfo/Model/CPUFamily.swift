@@ -74,6 +74,18 @@ public enum CPUFamily {
     case arm_lightning_thunder
     /// CPUFAMILY_ARM_FIRESTORM_ICESTORM
     case arm_firestorm_icestorm
+    /// CPUFAMILY_ARM_BLIZZARD_AVALANCHE
+    case arm_blizzard_avalanche
+    /// CPUFAMILY_ARM_EVEREST_SAWTOOTH
+    case arm_everest_sawtooth
+    /// CPUFAMILY_ARM_IBIZA
+    case arm_ibiza
+    /// CPUFAMILY_ARM_PALMA
+    case arm_palma
+    /// CPUFAMILY_ARM_COLL
+    case arm_coll
+    /// CPUFAMILY_ARM_LOBOS
+    case arm_lobos
 }
 
 extension CPUFamily: RawRepresentable {
@@ -113,6 +125,12 @@ extension CPUFamily: RawRepresentable {
         case RawValue(CPUFAMILY_ARM_VORTEX_TEMPEST): self = .arm_vortex_tempest
         case RawValue(CPUFAMILY_ARM_LIGHTNING_THUNDER): self = .arm_lightning_thunder
         case RawValue(CPUFAMILY_ARM_FIRESTORM_ICESTORM): self = .arm_firestorm_icestorm
+        case RawValue(CPUFAMILY_ARM_BLIZZARD_AVALANCHE): self = .arm_blizzard_avalanche
+        case RawValue(CPUFAMILY_ARM_EVEREST_SAWTOOTH): self = .arm_everest_sawtooth
+        case RawValue(CPUFAMILY_ARM_IBIZA): self = .arm_ibiza
+        case RawValue(CPUFAMILY_ARM_PALMA): self = .arm_palma
+        case RawValue(CPUFAMILY_ARM_COLL): self = .arm_coll
+        case RawValue(CPUFAMILY_ARM_LOBOS): self = .arm_lobos
         default: return nil
         }
     }
@@ -150,6 +168,12 @@ extension CPUFamily: RawRepresentable {
         case .arm_vortex_tempest: RawValue(CPUFAMILY_ARM_VORTEX_TEMPEST)
         case .arm_lightning_thunder: RawValue(CPUFAMILY_ARM_LIGHTNING_THUNDER)
         case .arm_firestorm_icestorm: RawValue(CPUFAMILY_ARM_FIRESTORM_ICESTORM)
+        case .arm_blizzard_avalanche: RawValue(CPUFAMILY_ARM_BLIZZARD_AVALANCHE)
+        case .arm_everest_sawtooth: RawValue(CPUFAMILY_ARM_EVEREST_SAWTOOTH)
+        case .arm_ibiza: RawValue(CPUFAMILY_ARM_IBIZA)
+        case .arm_palma: RawValue(CPUFAMILY_ARM_PALMA)
+        case .arm_coll: RawValue(CPUFAMILY_ARM_COLL)
+        case .arm_lobos: RawValue(CPUFAMILY_ARM_LOBOS)
         }
     }
 }
@@ -189,6 +213,12 @@ extension CPUFamily: CustomStringConvertible {
         case .arm_vortex_tempest: "CPUFAMILY_ARM_VORTEX_TEMPEST"
         case .arm_lightning_thunder: "CPUFAMILY_ARM_LIGHTNING_THUNDER"
         case .arm_firestorm_icestorm: "CPUFAMILY_ARM_FIRESTORM_ICESTORM"
+        case .arm_blizzard_avalanche: "CPUFAMILY_ARM_BLIZZARD_AVALANCHE"
+        case .arm_everest_sawtooth: "CPUFAMILY_ARM_EVEREST_SAWTOOTH"
+        case .arm_ibiza: "CPUFAMILY_ARM_IBIZA"
+        case .arm_palma: "CPUFAMILY_ARM_PALMA"
+        case .arm_coll: "CPUFAMILY_ARM_COLL"
+        case .arm_lobos: "CPUFAMILY_ARM_LOBOS"
         }
     }
 }
