@@ -3,7 +3,7 @@
 //
 //
 //  Created by p-x9 on 2024/04/21.
-//  
+//
 //
 
 import Foundation
@@ -18,7 +18,7 @@ public enum CPUThreadType {
 
 extension CPUThreadType: RawRepresentable {
     public typealias RawValue = Int32
-
+    
     public init?(rawValue: RawValue) {
         switch rawValue {
         case CPU_THREADTYPE_NONE: self = .none
@@ -26,7 +26,7 @@ extension CPUThreadType: RawRepresentable {
         default: return nil
         }
     }
-
+    
     public var rawValue: RawValue {
         switch self {
         case .none: CPU_THREADTYPE_NONE
@@ -44,12 +44,17 @@ extension CPUThreadType: CustomStringConvertible {
     }
 }
 
+
 extension CPUThreadType {
     /// CPU thread type of host pc
     static var current: CPUThreadType? {
+#if arch(x86_64)
         guard let type = Sysctl.sysctl(hw.cputhreadtype) else {
             return nil
         }
         return .init(rawValue: CPUThreadType.RawValue(type))
+#else
+        CPUThreadType.none
+#endif
     }
 }
