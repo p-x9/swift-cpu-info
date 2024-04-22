@@ -70,10 +70,10 @@ extension CPUSubFamily: CustomStringConvertible {
 
 extension CPUSubFamily {
     /// CPU sub family of host pc
-    static var current: CPUFamily? {
+    static var current: Self? {
         guard let type = Sysctl.sysctl(hw.cpusubfamily) else {
             return nil
         }
-        return .init(rawValue: CPUFamily.RawValue(type))
+        return .init(rawValue: CPUSubFamily.RawValue(type))
     }
 }
