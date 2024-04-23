@@ -50,6 +50,13 @@ extension CPUInfo {
 }
 
 extension CPUInfo {
+    public static var processCPUType: CPUType? {
+        guard let rawValue = Sysctl.sysctl(sysctl.proc_cputype) else {
+            return nil
+        }
+        return .init(rawValue: rawValue)
+    }
+
     /// A boolean value indicate whether this process is running in Rosetta or not.
     /// https://developer.apple.com/videos/play/wwdc2020/10686/
     public static var isTranslated: Bool {
