@@ -48,3 +48,17 @@ extension CPUInfo {
         #endif
     }
 }
+
+extension CPUInfo {
+    /// A boolean value indicate whether this process is running in Rosetta or not.
+    /// https://developer.apple.com/videos/play/wwdc2020/10686/
+    public static var isTranslated: Bool {
+        guard let _translated = Sysctl.sysctl("sysctl.proc_translated") else {
+            return false
+        }
+        let translated = _translated.withUnsafeBytes {
+            $0.load(as: CInt.self)
+        }
+        return translated == 1
+    }
+}
