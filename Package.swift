@@ -11,7 +11,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/p-x9/swift-sysctl.git", from: "0.1.0")
+        .package(url: "https://github.com/p-x9/swift-sysctl.git", from: "0.3.0")
     ],
     targets: [
         .target(
