@@ -82,3 +82,12 @@ extension CPUInfo {
 #endif
     }
 }
+
+extension CPUInfo {
+    public static var performanceCore: Core<Nodes.HW.Perflevel0> { .init(hw.perflevel0)
+    }
+
+    public static var efficientCore: Core<Nodes.HW.Perflevel1> { .init(hw.perflevel1)
+    }
+}
+
