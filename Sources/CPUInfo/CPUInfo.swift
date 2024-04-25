@@ -26,9 +26,9 @@ extension CPUInfo {
     }
 
     public static var vendor: String? {
-        #if arch(x86_64)
+#if arch(x86_64)
         try? Sysctl.sysctl(machdep.cpu.vendor)
-        #else
+#else
         if let vendor = try? Sysctl.sysctl("machdep.cpu.vendor") {
             return vendor.withUnsafeBytes {
                 guard let baseAddress = $0.baseAddress else {
@@ -45,7 +45,7 @@ extension CPUInfo {
             return "Apple Inc."
         }
         return nil
-        #endif
+#endif
     }
 }
 
@@ -67,5 +67,18 @@ extension CPUInfo {
             $0.load(as: CInt.self)
         }
         return translated == 1
+    }
+}
+
+extension CPUInfo {
+    public static var features: [String]? {
+#if arch(x86_64)
+        try? Sysctl.sysctl(machdep.cpu.features)?.components(separatedBy: " ")
+#elseif arch(arm64)
+        _features
+#else
+        #warning("Not Implemented")
+        return nil
+#endif
     }
 }
