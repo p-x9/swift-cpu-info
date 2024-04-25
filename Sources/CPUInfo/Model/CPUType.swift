@@ -128,8 +128,8 @@ extension CPUType {
 extension CPUType {
     /// CPU type of host pc
     static var current: CPUType? {
-        guard var type = Sysctl.sysctl(hw.cputype),
-              let is64BitCapable = Sysctl.sysctl(hw.cpu64bit_capable) else {
+        guard var type = try? Sysctl.sysctl(hw.cputype),
+              let is64BitCapable = try? Sysctl.sysctl(hw.cpu64bit_capable) else {
             return nil
         }
 

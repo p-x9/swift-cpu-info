@@ -49,7 +49,7 @@ extension CPUThreadType {
     /// CPU thread type of host pc
     static var current: CPUThreadType? {
 #if arch(x86_64)
-        guard let type = Sysctl.sysctl(hw.cputhreadtype) else {
+        guard let type = try? Sysctl.sysctl(hw.cputhreadtype) else {
             return nil
         }
         return .init(rawValue: CPUThreadType.RawValue(type))

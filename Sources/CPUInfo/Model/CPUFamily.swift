@@ -241,7 +241,7 @@ extension CPUFamily {
 extension CPUFamily {
     /// CPU family of host pc
     static var current: CPUFamily? {
-        guard let type = Sysctl.sysctl(hw.cpufamily) else {
+        guard let type = try? Sysctl.sysctl(hw.cpufamily) else {
             return nil
         }
         return .init(rawValue: CPUFamily.RawValue(type))

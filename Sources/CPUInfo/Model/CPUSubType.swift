@@ -1064,7 +1064,7 @@ extension CPUSubType {
     /// CPU subtype of host pc
     static var current: CPUSubType? {
         guard let cpuType: CPUType = .current,
-              let rawValue = Sysctl.sysctl(hw.cpusubtype) else {
+              let rawValue = try? Sysctl.sysctl(hw.cpusubtype) else {
             return nil
         }
         return .init(rawValue: rawValue, of: cpuType)
