@@ -81,6 +81,10 @@ extension CPUInfo {
         return nil
 #endif
     }
+
+    public static var featureBits: [CUnsignedInt]? {
+        try? Sysctl.sysctl(machdep.cpu.feature_bits)
+    }
 }
 
 extension CPUInfo {
