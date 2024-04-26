@@ -9,6 +9,9 @@ A Swift library for getting CPU informations
 [![Github stars](https://img.shields.io/github/stars/p-x9/swift-cpu-info)](https://github.com/p-x9/swift-cpu-info/stargazers)
 [![Github top language](https://img.shields.io/github/languages/top/p-x9/swift-cpu-info)](https://github.com/p-x9/swift-cpu-info/)
 
+> [!NOTE]
+> Currently only works on Apple platform.
+
 ## Usage
 
 ### print
