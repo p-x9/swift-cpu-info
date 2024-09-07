@@ -23,4 +23,8 @@
 #define CPUFAMILY_ARM_LOBOS 0x5f4dea93
 #endif
 
+#ifndef CPUFAMILY_ARM_DONAN
+#define CPUFAMILY_ARM_DONAN 0x6f5129ac
+#endif
+
 #endif /* cpu_family_h */
