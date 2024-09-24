@@ -27,4 +27,12 @@
 #define CPUFAMILY_ARM_DONAN 0x6f5129ac
 #endif
 
+#ifndef CPUFAMILY_ARM_TAHITI
+#define CPUFAMILY_ARM_TAHITI 0x75d4acb9
+#endif
+
+#ifndef CPUFAMILY_ARM_TUPAI
+#define CPUFAMILY_ARM_TUPAI 0x204526d0
+#endif
+
 #endif /* cpu_family_h */
