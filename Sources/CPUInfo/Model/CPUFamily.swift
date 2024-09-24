@@ -89,6 +89,10 @@ public enum CPUFamily {
     case arm_lobos
     /// CPUFAMILY_ARM_DONAN
     case arm_donan
+    /// CPUFAMILY_ARM_TAHITI
+    case arm_tahiti
+    /// CPUFAMILY_ARM_TUPAI
+    case arm_tupai
 }
 
 extension CPUFamily: RawRepresentable {
@@ -179,6 +183,8 @@ extension CPUFamily: RawRepresentable {
         case .arm_coll: RawValue(CPUFAMILY_ARM_COLL)
         case .arm_lobos: RawValue(CPUFAMILY_ARM_LOBOS)
         case .arm_donan: RawValue(CPUFAMILY_ARM_DONAN)
+        case .arm_tahiti: RawValue(CPUFAMILY_ARM_TAHITI)
+        case .arm_tupai: RawValue(CPUFAMILY_ARM_TUPAI)
         }
     }
 }
@@ -225,6 +231,8 @@ extension CPUFamily: CustomStringConvertible {
         case .arm_coll: "CPUFAMILY_ARM_COLL"
         case .arm_lobos: "CPUFAMILY_ARM_LOBOS"
         case .arm_donan: "CPUFAMILY_ARM_DONAN"
+        case .arm_tahiti: "CPUFAMILY_ARM_TAHITI"
+        case .arm_tupai: "CPUFAMILY_ARM_TUPAI"
         }
     }
 }
