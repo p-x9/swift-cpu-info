@@ -27,6 +27,10 @@
 #define CPUFAMILY_ARM_DONAN 0x6f5129ac
 #endif
 
+#ifndef CPUFAMILY_ARM_BRAVA
+#define CPUFAMILY_ARM_BRAVA 0x17d5b93a
+#endif
+
 #ifndef CPUFAMILY_ARM_TAHITI
 #define CPUFAMILY_ARM_TAHITI 0x75d4acb9
 #endif
