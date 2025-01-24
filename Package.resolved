@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/p-x9/swift-sysctl.git",
       "state" : {
-        "revision" : "b25d922f24b52671821949b9afc6a6c2ea0b7daf",
-        "version" : "0.5.0"
+        "revision" : "644057e1b49380d769b3b4c3f163b47506cc8e24",
+        "version" : "0.8.0"
       }
     }
   ],
