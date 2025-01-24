@@ -79,6 +79,18 @@ extension CPUInfo {
             /* Features from: ID_AA64PFR1_EL1 */
             ("SSBS", try? Sysctl.sysctl(hw.optional.arm.FEAT_SSBS)),
             ("BTI", try? Sysctl.sysctl(hw.optional.arm.FEAT_BTI)),
+            ("SME", try? Sysctl.sysctl(hw.optional.arm.FEAT_SME)),
+            ("SME2", try? Sysctl.sysctl(hw.optional.arm.FEAT_SME2)),
+
+            /* Features from: ID_AA64SMFR0_EL1 */
+            ("SME_F32F32", try? Sysctl.sysctl(hw.optional.arm.SME_F32F32)),
+            ("SME_BI32I32", try? Sysctl.sysctl(hw.optional.arm.SME_BI32I32)),
+            ("SME_B16F32", try? Sysctl.sysctl(hw.optional.arm.SME_B16F32)),
+            ("SME_F16F32", try? Sysctl.sysctl(hw.optional.arm.SME_F16F32)),
+            ("SME_I8I32", try? Sysctl.sysctl(hw.optional.arm.SME_I8I32)),
+            ("SME_I16I32", try? Sysctl.sysctl(hw.optional.arm.SME_I16I32)),
+            ("SME_F64F64", try? Sysctl.sysctl(hw.optional.arm.FEAT_SME_F64F64)),
+            ("SME_I16I64", try? Sysctl.sysctl(hw.optional.arm.FEAT_SME_I16I64)),
 
             /* Features from FPCR. */
             ("FP_SyncExceptions", try? Sysctl.sysctl(hw.optional.arm.FP_SyncExceptions)),
