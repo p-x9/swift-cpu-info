@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftSysctl
+import CPUInfoC
 
 public enum CPUSubType {
     case any(CPUAnySubType)
@@ -918,6 +919,10 @@ public enum CPUARMSubType {
     case arm_v7em
     /// CPU_SUBTYPE_ARM_V8M
     case arm_v8m
+    /// CPU_SUBTYPE_ARM_V8M_BASE
+    case arm_v8m_base
+    /// CPU_SUBTYPE_ARM_V8_1M_MAIN
+    case arm_v8m_1m_main
 }
 
 extension CPUARMSubType: RawRepresentable {
@@ -939,6 +944,8 @@ extension CPUARMSubType: RawRepresentable {
         case CPU_SUBTYPE_ARM_V7M: self = .arm_v7m
         case CPU_SUBTYPE_ARM_V7EM: self = .arm_v7em
         case CPU_SUBTYPE_ARM_V8M: self = .arm_v8m
+        case CPU_SUBTYPE_ARM_V8M_BASE: self = .arm_v8m_base
+        case CPU_SUBTYPE_ARM_V8_1M_MAIN: self = .arm_v8m_1m_main
         default: return nil
         }
     }
@@ -958,6 +965,8 @@ extension CPUARMSubType: RawRepresentable {
         case .arm_v7m: CPU_SUBTYPE_ARM_V7M
         case .arm_v7em: CPU_SUBTYPE_ARM_V7EM
         case .arm_v8m: CPU_SUBTYPE_ARM_V8M
+        case .arm_v8m_base: CPU_SUBTYPE_ARM_V8M_BASE
+        case .arm_v8m_1m_main: CPU_SUBTYPE_ARM_V8_1M_MAIN
         }
     }
 }
@@ -979,6 +988,8 @@ extension CPUARMSubType: CustomStringConvertible {
         case .arm_v7m: "CPU_SUBTYPE_ARM_V7M"
         case .arm_v7em: "CPU_SUBTYPE_ARM_V7EM"
         case .arm_v8m: "CPU_SUBTYPE_ARM_V8M"
+        case .arm_v8m_base: "CPU_SUBTYPE_ARM_V8M_BASE"
+        case .arm_v8m_1m_main: "CPU_SUBTYPE_ARM_V8_1M_MAIN"
         }
     }
 
