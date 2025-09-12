@@ -39,4 +39,21 @@
 #define CPUFAMILY_ARM_TUPAI 0x204526d0
 #endif
 
+#ifndef CPUFAMILY_ARM_THERA
+#define CPUFAMILY_ARM_THERA 0xab345f09
+#endif
+
+#ifndef CPUFAMILY_ARM_TILOS
+#define CPUFAMILY_ARM_TILOS 0x01d7a72b
+#endif
+
+/* --- */
+#ifndef CPU_SUBTYPE_ARM_V8M_BASE
+#define CPU_SUBTYPE_ARM_V8M_BASE        ((cpu_subtype_t) 18)
+#endif
+
+#ifndef CPU_SUBTYPE_ARM_V8_1M_MAIN
+#define CPU_SUBTYPE_ARM_V8_1M_MAIN      ((cpu_subtype_t) 19)
+#endif
+
 #endif /* cpu_family_h */
