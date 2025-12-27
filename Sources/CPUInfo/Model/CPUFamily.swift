@@ -95,6 +95,8 @@ public enum CPUFamily {
     case arm_tahiti
     /// CPUFAMILY_ARM_TUPAI
     case arm_tupai
+    /// CPUFAMILY_ARM_HIDRA
+    case arm_hidra
     /// CPUFAMILY_ARM_THERA
     case arm_thera
     /// CPUFAMILY_ARM_TILOS
@@ -148,6 +150,7 @@ extension CPUFamily: RawRepresentable {
         case RawValue(CPUFAMILY_ARM_BRAVA): self = .arm_brava
         case RawValue(CPUFAMILY_ARM_TAHITI): self = .arm_tahiti
         case RawValue(CPUFAMILY_ARM_TUPAI): self = .arm_tupai
+        case RawValue(CPUFAMILY_ARM_HIDRA): self = .arm_hidra
         case RawValue(CPUFAMILY_ARM_THERA): self = .arm_thera
         case RawValue(CPUFAMILY_ARM_TILOS): self = .arm_tilos
         default: return nil
@@ -197,6 +200,7 @@ extension CPUFamily: RawRepresentable {
         case .arm_brava: RawValue(CPUFAMILY_ARM_BRAVA)
         case .arm_tahiti: RawValue(CPUFAMILY_ARM_TAHITI)
         case .arm_tupai: RawValue(CPUFAMILY_ARM_TUPAI)
+        case .arm_hidra: RawValue(CPUFAMILY_ARM_HIDRA)
         case .arm_thera: RawValue(CPUFAMILY_ARM_THERA)
         case .arm_tilos: RawValue(CPUFAMILY_ARM_TILOS)
         }
@@ -248,6 +252,7 @@ extension CPUFamily: CustomStringConvertible {
         case .arm_brava: "CPUFAMILY_ARM_BRAVA"
         case .arm_tahiti: "CPUFAMILY_ARM_TAHITI"
         case .arm_tupai: "CPUFAMILY_ARM_TUPAI"
+        case .arm_hidra: "CPUFAMILY_ARM_HIDRA"
         case .arm_thera: "CPUFAMILY_ARM_THERA"
         case .arm_tilos: "CPUFAMILY_ARM_TILOS"
         }

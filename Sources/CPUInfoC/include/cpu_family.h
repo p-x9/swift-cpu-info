@@ -43,6 +43,10 @@
 #define CPUFAMILY_ARM_THERA 0xab345f09
 #endif
 
+#ifndef CPUFAMILY_ARM_HIDRA
+#define CPUFAMILY_ARM_HIDRA 0x1d5a87e8
+#endif
+
 #ifndef CPUFAMILY_ARM_TILOS
 #define CPUFAMILY_ARM_TILOS 0x01d7a72b
 #endif
