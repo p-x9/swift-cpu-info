@@ -2,7 +2,7 @@ import Foundation
 import SwiftSysctl
 import CPUInfoC
 
-public enum CPUInfo {}
+public enum CPUInfo: Sendable {}
 
 extension CPUInfo {
     public static var type: CPUType? { .current }
@@ -88,10 +88,12 @@ extension CPUInfo {
 }
 
 extension CPUInfo {
-    public static var performanceCore: Core<Nodes.HW.Perflevel0> { .init(hw.perflevel0)
+    public static var performanceCore: Core<Nodes.HW.Perflevel0> {
+        .init(hw.perflevel0)
     }
 
-    public static var efficientCore: Core<Nodes.HW.Perflevel1> { .init(hw.perflevel1)
+    public static var efficientCore: Core<Nodes.HW.Perflevel1> {
+        .init(hw.perflevel1)
     }
 }
 

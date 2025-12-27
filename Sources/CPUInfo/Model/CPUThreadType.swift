@@ -9,7 +9,7 @@
 import Foundation
 import SwiftSysctl
 
-public enum CPUThreadType {
+public enum CPUThreadType: Sendable {
     /// CPU_THREADTYPE_NONE
     case none
     /// CPU_THREADTYPE_INTEL_HTT

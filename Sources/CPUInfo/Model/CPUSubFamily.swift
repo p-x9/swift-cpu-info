@@ -9,7 +9,7 @@
 import Foundation
 import SwiftSysctl
 
-public enum CPUSubFamily {
+public enum CPUSubFamily: Sendable {
     /// CPUSUBFAMILY_UNKNOWN
     case unknown
     /// CPUSUBFAMILY_ARM_HP

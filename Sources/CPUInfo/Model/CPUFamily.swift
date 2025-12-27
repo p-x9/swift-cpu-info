@@ -10,7 +10,7 @@ import Foundation
 import SwiftSysctl
 import CPUInfoC
 
-public enum CPUFamily {
+public enum CPUFamily: Sendable {
     /// CPUFAMILY_UNKNOWN
     case unknown
     /// CPUFAMILY_POWERPC_G3
