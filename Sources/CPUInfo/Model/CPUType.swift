@@ -9,7 +9,7 @@
 import Foundation
 import SwiftSysctl
 
-public enum CPUType: CaseIterable {
+public enum CPUType: CaseIterable, Sendable {
     /// CPU_TYPE_ANY
     case any
     /// CPU_TYPE_VAX
