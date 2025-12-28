@@ -9,7 +9,7 @@
 import Foundation
 import SwiftSysctl
 
-public protocol CoreNodeProtocol {
+public protocol CoreNodeProtocol: Sendable {
     var physicalcpu: LeafNameNode<CInt> { get }
     var logicalcpu: LeafNameNode<CInt> { get }
     var l1icachesize: LeafNameNode<CInt> { get }

@@ -9,7 +9,7 @@
 import Foundation
 import SwiftSysctl
 
-public struct Core<CoreNode: CoreNodeProtocol & NodeCollection> {
+public struct Core<CoreNode: CoreNodeProtocol & NodeCollection>: Sendable {
 
     let _node: ChainedNameNode<CoreNode>
 
