@@ -47,6 +47,10 @@
 #define CPUFAMILY_ARM_HIDRA 0x1d5a87e8
 #endif
 
+#ifndef CPUFAMILY_ARM_SOTRA
+#define CPUFAMILY_ARM_SOTRA 0xf76c5b1a
+#endif
+
 #ifndef CPUFAMILY_ARM_TILOS
 #define CPUFAMILY_ARM_TILOS 0x01d7a72b
 #endif
