@@ -11,6 +11,14 @@
 
 #include <mach/machine.h>
 
+#ifndef CPU_TYPE_RISCV
+#define CPU_TYPE_RISCV                  ((cpu_type_t) 24)
+#endif
+
+#ifndef CPU_SUBTYPE_RISCV_ALL
+#define CPU_SUBTYPE_RISCV_ALL           ((cpu_subtype_t) 0)
+#endif
+
 #ifndef CPUFAMILY_ARM_IBIZA
 #define CPUFAMILY_ARM_IBIZA 0xfa33415e
 #endif
