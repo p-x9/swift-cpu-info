@@ -103,6 +103,12 @@ public enum CPUFamily: Sendable {
     case arm_thera
     /// CPUFAMILY_ARM_TILOS
     case arm_tilos
+    /// CPUFAMILY_ARM_KOMODO
+    case arm_komodo
+    /// CPUFAMILY_ARM_BORNEO
+    case arm_borneo
+    /// CPUFAMILY_ARM_NEVIS
+    case arm_nevis
 }
 
 extension CPUFamily: RawRepresentable {
@@ -156,6 +162,9 @@ extension CPUFamily: RawRepresentable {
         case RawValue(CPUFAMILY_ARM_SOTRA): self = .arm_sotra
         case RawValue(CPUFAMILY_ARM_THERA): self = .arm_thera
         case RawValue(CPUFAMILY_ARM_TILOS): self = .arm_tilos
+        case RawValue(CPUFAMILY_ARM_KOMODO): self = .arm_komodo
+        case RawValue(CPUFAMILY_ARM_BORNEO): self = .arm_borneo
+        case RawValue(CPUFAMILY_ARM_NEVIS): self = .arm_nevis
         default: return nil
         }
     }
@@ -207,6 +216,9 @@ extension CPUFamily: RawRepresentable {
         case .arm_sotra: RawValue(CPUFAMILY_ARM_SOTRA)
         case .arm_thera: RawValue(CPUFAMILY_ARM_THERA)
         case .arm_tilos: RawValue(CPUFAMILY_ARM_TILOS)
+        case .arm_komodo: RawValue(CPUFAMILY_ARM_KOMODO)
+        case .arm_borneo: RawValue(CPUFAMILY_ARM_BORNEO)
+        case .arm_nevis: RawValue(CPUFAMILY_ARM_NEVIS)
         }
     }
 }
@@ -260,6 +272,9 @@ extension CPUFamily: CustomStringConvertible {
         case .arm_sotra: "CPUFAMILY_ARM_SOTRA"
         case .arm_thera: "CPUFAMILY_ARM_THERA"
         case .arm_tilos: "CPUFAMILY_ARM_TILOS"
+        case .arm_komodo: "CPUFAMILY_ARM_KOMODO"
+        case .arm_borneo: "CPUFAMILY_ARM_BORNEO"
+        case .arm_nevis: "CPUFAMILY_ARM_NEVIS"
         }
     }
 }

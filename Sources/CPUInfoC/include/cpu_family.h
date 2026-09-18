@@ -71,6 +71,18 @@
 #define CPUFAMILY_ARM_TILOS 0x01d7a72b
 #endif
 
+#ifndef CPUFAMILY_ARM_KOMODO
+#define CPUFAMILY_ARM_KOMODO 0x6d0ccb0c
+#endif
+
+#ifndef CPUFAMILY_ARM_BORNEO
+#define CPUFAMILY_ARM_BORNEO 0x7db56df1
+#endif
+
+#ifndef CPUFAMILY_ARM_NEVIS
+#define CPUFAMILY_ARM_NEVIS 0x37652b0c
+#endif
+
 /* --- */
 #ifndef CPU_SUBTYPE_ARM_V8M_BASE
 #define CPU_SUBTYPE_ARM_V8M_BASE        ((cpu_subtype_t) 18)
