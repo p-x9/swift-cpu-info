@@ -19,6 +19,14 @@
 #define CPU_SUBTYPE_RISCV_ALL           ((cpu_subtype_t) 0)
 #endif
 
+#ifndef CPU_SUBTYPE_ARM64_X1
+#define CPU_SUBTYPE_ARM64_X1            ((cpu_subtype_t) 3)
+#endif
+
+#ifndef CPU_SUBTYPE_ARM64E_X1
+#define CPU_SUBTYPE_ARM64E_X1           ((cpu_subtype_t) 12)
+#endif
+
 #ifndef CPUFAMILY_ARM_IBIZA
 #define CPUFAMILY_ARM_IBIZA 0xfa33415e
 #endif
