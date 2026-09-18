@@ -26,6 +26,7 @@ public enum CPUSubType: Sendable {
     case arm(CPUARMSubType)
     case arm64(CPUARM64SubType)
     case arm64_32(CPUARM64_32SubType)
+    case riscv(CPURISCVSubType)
 
     init?(rawValue: cpu_subtype_t, of cputype: CPUType) {
         switch cputype {
@@ -109,6 +110,11 @@ public enum CPUSubType: Sendable {
                 return nil
             }
             self = .powerpc(subtype)
+        case .riscv:
+            guard let subtype = CPURISCVSubType(rawValue: rawValue) else {
+                return nil
+            }
+            self = .riscv(subtype)
         }
     }
 }
@@ -146,6 +152,8 @@ extension CPUSubType {
             type.rawValue
         case let .arm64_32(type):
             type.rawValue
+        case let .riscv(type):
+            type.rawValue
         }
     }
 }
@@ -182,6 +190,8 @@ extension CPUSubType: CustomStringConvertible {
         case let .arm64(type):
             type.description
         case let .arm64_32(type):
+            type.description
+        case let .riscv(type):
             type.description
         }
     }
@@ -1067,6 +1077,37 @@ extension CPUARM64_32SubType: CustomStringConvertible {
         switch self {
         case .arm64_32_all: "CPU_SUBTYPE_ARM64_32_ALL"
         case .arm64_32_v8: "CPU_SUBTYPE_ARM64_32_V8"
+        }
+    }
+}
+
+// MARK: - RISC-V
+public enum CPURISCVSubType: Sendable {
+    /// CPU_SUBTYPE_RISCV_ALL
+    case riscv_all
+}
+
+extension CPURISCVSubType: RawRepresentable {
+    public typealias RawValue = cpu_subtype_t
+
+    public init?(rawValue: RawValue) {
+        switch rawValue {
+        case CPU_SUBTYPE_RISCV_ALL: self = .riscv_all
+        default: return nil
+        }
+    }
+
+    public var rawValue: RawValue {
+        switch self {
+        case .riscv_all: CPU_SUBTYPE_RISCV_ALL
+        }
+    }
+}
+
+extension CPURISCVSubType: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .riscv_all: "CPU_SUBTYPE_RISCV_ALL"
         }
     }
 }

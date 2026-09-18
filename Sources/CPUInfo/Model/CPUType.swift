@@ -8,6 +8,7 @@
 
 import Foundation
 import SwiftSysctl
+import CPUInfoC
 
 public enum CPUType: CaseIterable, Sendable {
     /// CPU_TYPE_ANY
@@ -42,6 +43,8 @@ public enum CPUType: CaseIterable, Sendable {
     case powerpc
     /// CPU_TYPE_POWERPC64
     case powerpc64
+    /// CPU_TYPE_RISCV
+    case riscv
 }
 
 extension CPUType: RawRepresentable {
@@ -65,6 +68,7 @@ extension CPUType: RawRepresentable {
         case CPU_TYPE_I860: self = .i860
         case CPU_TYPE_POWERPC: self = .powerpc
         case CPU_TYPE_POWERPC64: self = .powerpc64
+        case CPU_TYPE_RISCV: self = .riscv
         default:
             return nil
         }
@@ -88,6 +92,7 @@ extension CPUType: RawRepresentable {
         case .i860: CPU_TYPE_I860
         case .powerpc: CPU_TYPE_POWERPC
         case .powerpc64: CPU_TYPE_POWERPC64
+        case .riscv: CPU_TYPE_RISCV
         }
     }
 }
@@ -111,6 +116,7 @@ extension CPUType: CustomStringConvertible {
         case .i860: "CPU_TYPE_I860"
         case .powerpc: "CPU_TYPE_POWERPC"
         case .powerpc64: "CPU_TYPE_POWERPC64"
+        case .riscv: "CPU_TYPE_RISCV"
         }
     }
 }
